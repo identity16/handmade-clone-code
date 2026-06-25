@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Emotion</title>
+</head>
+
+<body>
+    <div id="root">
+        <h1>Hello, World!</h1>
+    </div>
+</body>
+<script type="module" src="./emotion.js"></script>
+<script type="module">
+    import { createEmotion } from "./emotion.js";
+
+    const { css } = createEmotion({ key: 'css' })
+
+    const root = document.getElementById('root')
+    root.innerHTML = `
+        <h1 class="${css({ color: 'hotpink', fontSize: 14 })}">Hello, World!</h1>
+    `
+</script>
+
+</html>
